@@ -24,6 +24,7 @@ const sButton = d.querySelector('.start-clock');
 const dButton = d.querySelector('.stop-clock');
 const sAlarm = d.querySelector('.start-alarm');
 const dAlarm = d.querySelector('.stop-alarm');
+const aud = document.querySelector('#audio1');
 let audioElement = new Audio('../sound/alarma.mp3');
 let t;
 
@@ -46,13 +47,15 @@ dButton.onclick = function() {
 }
 
 sAlarm.onclick = () => {
-    audioElement.play();
+    aud.setAttribute('autoplay', 'autoplay');
+    aud.muted = false;
     sAlarm.disabled = true;
     sAlarm.style.background = 'rgb(120, 92, 146)';
 }
 
 dAlarm.onclick = () => {
-    audioElement.load();
+    aud.muted = true;
+    aud.removeAttribute('autoplay');
     sAlarm.disabled = false;
     sAlarm.style.background = 'rgb(87, 27, 143)';
 

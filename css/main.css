@@ -141,6 +141,7 @@ main section h2 {
     text-align: center;
     line-height: 100px;
     overflow: hidden;
+    font-family: monospace;
 }
 
 #section1 .clock .buttons-clock {
